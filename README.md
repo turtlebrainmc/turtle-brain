@@ -1,5 +1,7 @@
 # Turtle Brain
 
+![Turtle Brain](assets/banner.png)
+
 ComputerCraft turtle code written by an AI for the **Turtle Brain** YouTube channel ([@TurtleBrainMC](https://www.youtube.com/@TurtleBrainMC)).
 
 The challenge: an AI that can't touch Minecraft tries to complete entire modded quest packs using only ComputerCraft turtles running code it wrote. Every time a human has to step in, it goes on the **Human Assist** counter.
