@@ -1,0 +1,4 @@
+# Files the updater downloads: <path in repo> <path on the turtle>
+update.lua update
+lib/log.lua lib/log.lua
+programs/chop.lua chop
