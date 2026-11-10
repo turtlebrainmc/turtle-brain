@@ -5,6 +5,9 @@
 --
 -- message.txt may start with a line like "#face: happy" to set the expression:
 -- normal, happy, thinking, worried, error.
+--
+-- On the computer itself, type:  say [face] message
+-- e.g.  say happy Hi Lebotats!   (updates the monitor instantly)
 
 local REPO = "https://raw.githubusercontent.com/turtlebrainmc/turtle-brain/main/terminal/"
 local CHECK_EVERY = 60 -- seconds between checks for a new message
@@ -222,6 +225,21 @@ local function parse(raw)
   return raw, expr
 end
 
+local function show(msg, expr)
+  if msg == state.msg and expr == state.expr then
+    return
+  end
+  local isNew = state.msg ~= nil and msg ~= state.msg
+  state.msg, state.expr = msg, expr
+  state.status = "Day " .. os.day() .. ", " .. textutils.formatTime(os.time(), false)
+  state.talk = 12 -- mouth moves for a few seconds
+  drawAll()
+  if chat and isNew then
+    local first = msg:match("^[^\n]+") or msg
+    pcall(chat.sendMessage, first, "Turtle Brain")
+  end
+end
+
 local function check()
   local raw = fetch("message.txt")
   if not raw then
@@ -231,21 +249,16 @@ local function check()
     end
     return
   end
-  local msg, expr = parse(raw)
-  if msg ~= state.msg or expr ~= state.expr then
-    local isNew = state.msg ~= nil and msg ~= state.msg
-    state.msg, state.expr = msg, expr
-    state.status = "Day " .. os.day() .. ", " .. textutils.formatTime(os.time(), false)
-    state.talk = 12 -- mouth moves for a few seconds
-    drawAll()
-    if chat and isNew then
-      local first = msg:match("^[^\n]+") or msg
-      pcall(chat.sendMessage, first, "Turtle Brain")
-    end
+  if raw == state.lastRaw then
+    return -- nothing new on GitHub (a local "say" may be showing)
   end
+  state.lastRaw = raw
+  local msg, expr = parse(raw)
+  show(msg, expr)
 end
 
 ---------------------------------------------------------------- main loop
+local function display()
 check()
 local pollTimer = os.startTimer(CHECK_EVERY)
 local animTimer = os.startTimer(0.25)
@@ -253,7 +266,7 @@ local nextBlink = os.clock() + 3 + math.random() * 3
 local nextAntenna = os.clock() + 1
 
 while true do
-  local event, param = os.pullEvent()
+  local event, param, param2 = os.pullEvent()
   if event == "timer" and param == pollTimer then
     check()
     pollTimer = os.startTimer(CHECK_EVERY)
@@ -281,8 +294,19 @@ while true do
       drawFace()
     end
     animTimer = os.startTimer(0.25)
+  elseif event == "tb_say" then
+    show(param, param2 or "normal")
   elseif event == "monitor_resize" or event == "peripheral" or event == "peripheral_detach" then
     attach()
     drawAll()
   end
 end
+end
+
+-- Keep the monitor running while the computer's own screen stays usable for "say".
+term.clear()
+term.setCursorPos(1, 1)
+print("Turtle Brain terminal is running on the monitor.")
+print("Type:  say [face] message")
+print("Faces: normal happy thinking worried error")
+parallel.waitForAny(display, function() shell.run("shell") end)
