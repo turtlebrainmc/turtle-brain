@@ -207,10 +207,6 @@ local function drawAll()
     mon.write(lines[i])
   end
 
-  -- footer
-  mon.setTextColor(colors.cyan)
-  mon.setCursorPos(2, h)
-  mon.write(state.status:sub(1, w - 2))
 end
 
 ---------------------------------------------------------------- messages
