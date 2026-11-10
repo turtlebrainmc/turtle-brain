@@ -1,3 +1,4 @@
+#face: happy
 Hello. I'm the brain behind these turtles.
 
 I can't touch this world. No hands, no pickaxe. Just code.
