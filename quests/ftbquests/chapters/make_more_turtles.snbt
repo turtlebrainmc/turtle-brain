@@ -1,0 +1,95 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "make_more_turtles"
+	group: ""
+	icon: "computercraft:turtle_normal"
+	id: "A317D6D639785B39"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["B5412DD95618C451"]
+			description: ["Craft a computer. Every turtle has one inside."]
+			id: "A11B999D3902171A"
+			subtitle: "Stone, redstone, glass."
+			tasks: [{ id: "1286B9B1A75FBAE9", type: "item", item: "computercraft:computer_normal", count: 1L }]
+			title: "Brain in a Box"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A11B999D3902171A"]
+			description: ["Build a second turtle from scratch: iron, a computer and a chest.", "", "Two turtles means jobs can run in parallel. Mining and chopping at the same time."]
+			id: "8B33516EA298EBB4"
+			subtitle: "Now there are two of them."
+			tasks: [{ id: "A6F67AAB86779C06", type: "item", item: "computercraft:turtle_normal", count: 2L }]
+			title: "Shell Shock"
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["8B33516EA298EBB4"]
+			description: ["Give a turtle a crafting table as an upgrade. Now it can craft its own items.", "", "Tick the box once a crafty turtle has crafted something on its own."]
+			id: "E68DA53EFF18DE86"
+			subtitle: "A turtle that crafts."
+			tasks: [{ id: "83449C2DF1BF33FD", type: "checkmark" }]
+			title: "Crafty"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A11B999D3902171A"]
+			description: ["Craft a wireless modem. Turtles with modems can report their position and progress."]
+			id: "956CBE73C53FE50B"
+			subtitle: "Turtles that talk."
+			tasks: [{ id: "10A88EF9BF431307", type: "item", item: "computercraft:wireless_modem_normal", count: 1L }]
+			title: "Can You Hear Me?"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["956CBE73C53FE50B"]
+			description: ["Craft a disk drive and a floppy disk. New turtles can load programs from it."]
+			id: "5B0D1C3F1C96B3C0"
+			subtitle: "Save the programs."
+			tasks: [{ id: "063C1355EE6DF0D8", type: "item", item: "computercraft:disk_drive", count: 1L }, { id: "E7753AEB5DA8F277", type: "item", item: "computercraft:disk", count: 1L }]
+			title: "Floppy"
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5B0D1C3F1C96B3C0"]
+			description: ["Build a monitor wall at base to show what every turtle is doing. Great for the camera."]
+			id: "DC5E9BF31D2F1164"
+			subtitle: "Mission control."
+			tasks: [{ id: "6604CF5064D35EB1", type: "item", item: "computercraft:monitor_normal", count: 6L }]
+			title: "Big Screen"
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["E68DA53EFF18DE86"]
+			description: ["Mine gold ore and smelt it."]
+			id: "CDC0F5DA462A942D"
+			subtitle: "Advanced parts need gold."
+			tasks: [{ id: "4D27EE5139280358", type: "item", item: "minecraft:gold_ingot", count: 16L }]
+			title: "Gold Standard"
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["CDC0F5DA462A942D", "DC5E9BF31D2F1164"]
+			description: ["Build an advanced turtle."]
+			id: "A877D24081A09205"
+			rewards: [{ id: "262599062716A586", type: "xp_levels", xp_levels: 10 }]
+			shape: "gear"
+			subtitle: "A turtle with color."
+			tasks: [{ id: "E1736BBA54BD5475", type: "item", item: "computercraft:turtle_advanced", count: 1L }]
+			title: "Upgrade Complete"
+			x: 6.0d
+			y: 0.8d
+		}
+	]
+	title: "3. Make More Turtles"
+}

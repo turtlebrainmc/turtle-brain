@@ -1,0 +1,95 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "the_fleet"
+	group: ""
+	icon: "computercraft:turtle_advanced"
+	id: "C24E79226EEA5874"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["A877D24081A09205"]
+			description: ["Have four turtles working at once."]
+			id: "76B95AB00156349E"
+			subtitle: "Four turtles, one brain."
+			tasks: [{ id: "BCBCB9277E4D592E", type: "item", item: "computercraft:turtle_normal", count: 4L }]
+			title: "Squad Goals"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["76B95AB00156349E"]
+			description: ["Build an automatic tree farm run entirely by turtles."]
+			id: "F6769D2665039871"
+			subtitle: "Plant, wait, chop, repeat."
+			tasks: [{ id: "2FD654181D5CB7BC", type: "item", item: "minecraft:oak_log", count: 512L }]
+			title: "Tree Farm"
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["76B95AB00156349E"]
+			description: ["Run a quarry program that clears out a whole area, layer by layer."]
+			id: "45A9737FF4554AC9"
+			subtitle: "Make a very big hole."
+			tasks: [{ id: "3AFF9478D7E36386", type: "item", item: "minecraft:cobblestone", count: 2048L }]
+			title: "Quarry"
+			x: 1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["45A9737FF4554AC9"]
+			description: ["Stockpile iron for a turtle army."]
+			id: "F2FFDB7A1CDD717E"
+			subtitle: "So much iron."
+			tasks: [{ id: "70913517F75C8633", type: "item", item: "minecraft:iron_block", count: 16L }]
+			title: "Iron Mountain"
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["F6769D2665039871", "45A9737FF4554AC9"]
+			description: ["Collect enough diamonds to give pickaxes to a whole fleet."]
+			id: "ECBA35C96425A36A"
+			subtitle: "A diamond for every pickaxe."
+			tasks: [{ id: "55E2F6EE89DC8453", type: "item", item: "minecraft:diamond", count: 32L }]
+			title: "Diamond Hands"
+			x: 3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["F2FFDB7A1CDD717E", "ECBA35C96425A36A"]
+			description: ["Build a fleet of sixteen turtles."]
+			id: "0D27DDC1246912FD"
+			subtitle: "Sixteen turtles."
+			tasks: [{ id: "12D6089D8B23C640", type: "item", item: "computercraft:turtle_normal", count: 16L }]
+			title: "Fleet Admiral"
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D27DDC1246912FD"]
+			description: ["Get a turtle into the Nether and bring back blaze rods and soul sand. The turtles fight. You watch."]
+			id: "EAD831BE2F88E0B8"
+			subtitle: "Turtles in the Nether."
+			tasks: [{ id: "96B57C16C7012753", type: "item", item: "minecraft:blaze_rod", count: 8L }, { id: "025A20D27A8E4277", type: "item", item: "minecraft:soul_sand", count: 4L }]
+			title: "Hot Trip"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["EAD831BE2F88E0B8"]
+			description: ["&6The season finale.&r", "", "Summon the Wither and defeat it using only turtles.", "", "Bring back the Nether Star to prove a brain made of code can beat Minecraft."]
+			id: "FD9E7CDA4D5EB0DD"
+			rewards: [{ id: "2E677C3BF8CDF835", type: "xp_levels", xp_levels: 30 }]
+			shape: "heart"
+			subtitle: "The final boss."
+			tasks: [{ id: "B2E4497D82C09434", type: "item", item: "minecraft:nether_star", count: 1L }]
+			title: "Turtle Brain"
+			x: 7.5d
+			y: 0.0d
+		}
+	]
+	title: "4. The Fleet"
+}

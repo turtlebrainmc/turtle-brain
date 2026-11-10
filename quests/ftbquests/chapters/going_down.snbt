@@ -1,0 +1,86 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "going_down"
+	group: ""
+	icon: "minecraft:diamond_pickaxe"
+	id: "14F33C256CED6687"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1D7A5D1C8692725C"]
+			description: ["Find and mine coal ore. Turtles can inspect blocks to know what they're looking at."]
+			id: "2D49C06D442BCE21"
+			subtitle: "Black gold."
+			tasks: [{ id: "67994CF23B6982A6", type: "item", item: "minecraft:coal", count: 32L }]
+			title: "Coal Seam"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2D49C06D442BCE21"]
+			description: ["Mine iron ore. A turtle that only digs ore and skips the rest is a smart turtle."]
+			id: "08495DAD31C1D998"
+			subtitle: "The metal that builds turtles."
+			tasks: [{ id: "0B412390BABF20CB", type: "item", item: "minecraft:raw_iron", count: 24L }]
+			title: "Iron Will"
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["08495DAD31C1D998"]
+			description: ["Smelt the iron. Turtles load the furnace, turtles empty it."]
+			id: "ECAE386457F88E78"
+			rewards: [{ id: "A479207016E08F22", type: "item", item: "minecraft:coal", count: 16 }]
+			subtitle: "Raw in, ingots out."
+			tasks: [{ id: "A88DDED24CE09DDA", type: "item", item: "minecraft:iron_ingot", count: 24L }]
+			title: "Smelter"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2D49C06D442BCE21"]
+			description: ["Find sand and smelt it into glass, then craft glass panes. Computers need them."]
+			id: "2EC1C6DA3AB9DCE5"
+			subtitle: "Glass is just hot sand."
+			tasks: [{ id: "99880C02D7B12CE1", type: "item", item: "minecraft:glass_pane", count: 16L }]
+			title: "Sandy Situation"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2EC1C6DA3AB9DCE5"]
+			description: ["Mine redstone ore. It's deep, so the turtle will need to dig deep."]
+			id: "B5412DD95618C451"
+			subtitle: "The blood of every computer."
+			tasks: [{ id: "C2CC70845A92122C", type: "item", item: "minecraft:redstone", count: 32L }]
+			title: "Red Dust"
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["B5412DD95618C451"]
+			description: ["Dig into the deepslate layer. Watch for lava. Turtles don't swim."]
+			id: "74E80B88E60EB480"
+			subtitle: "Below zero."
+			tasks: [{ id: "6D8D02A69F3B69F6", type: "item", item: "minecraft:cobbled_deepslate", count: 64L }]
+			title: "Into the Dark"
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["ECAE386457F88E78", "74E80B88E60EB480"]
+			description: ["Find diamonds. Every pickaxe turtle needs one, so they're worth more than they look."]
+			id: "000D0B9F0CC59E90"
+			rewards: [{ id: "BC92FD008D64C62A", type: "xp_levels", xp_levels: 10 }]
+			shape: "diamond"
+			subtitle: "Diamonds. Found by a robot."
+			tasks: [{ id: "2605DBC6226E104C", type: "item", item: "minecraft:diamond", count: 3L }]
+			title: "Shiny"
+			x: 6.0d
+			y: 0.8d
+		}
+	]
+	title: "2. Going Down"
+}

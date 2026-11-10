@@ -1,0 +1,87 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "boot_sequence"
+	group: ""
+	icon: "computercraft:computer_normal"
+	id: "A735851A583739D6"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["&bWelcome to Turtle Brain.&r", "", "An AI that can't touch Minecraft is going to beat this quest book using only turtles it programs itself.", "", "&eThe rules:&r", "&a- Turtles break and place every block in the world.", "&a- The human may claim quests, craft, move items, and place or pick up turtles and computers.", "&c- Anything else the human does is a Human Assist. Fewer assists is the score.", "", "Tick the box to receive your first turtle."]
+			id: "D74410A0A2ACF8B8"
+			rewards: [{ id: "049DD03922D30701", type: "item", item: { Count: 1b, id: "computercraft:turtle_normal", tag: { RightUpgrade: "minecraft:diamond_pickaxe" } } }, { id: "E97A6446630B967E", type: "item", item: "minecraft:coal", count: 8 }]
+			shape: "hexagon"
+			subtitle: "Read the rules. Then hand over control."
+			tasks: [{ id: "082FE94346888231", type: "checkmark" }]
+			title: "Hello, World"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D74410A0A2ACF8B8"]
+			description: ["Program the turtle to cut down a tree and bring the logs back.", "", "Logs are also fuel. A hungry turtle is a stuck turtle."]
+			id: "B0B0143512F971DE"
+			rewards: [{ id: "DBF8AF1B26E5FB8F", type: "item", item: "minecraft:bread", count: 4 }]
+			subtitle: "Every empire starts with a tree."
+			tasks: [{ id: "F94444FE04C4B781", type: "item", item: "minecraft:oak_log", count: 16L }]
+			title: "First Swing"
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["B0B0143512F971DE"]
+			description: ["Craft a crafting table and have a turtle place it at base.", "", "Using a crafting table a turtle placed is allowed. Placing it yourself is an assist."]
+			id: "A486273938FB43C2"
+			subtitle: "The turtle builds it. You get to use it."
+			tasks: [{ id: "C3748BFAB392834C", type: "item", item: "minecraft:crafting_table", count: 1L }]
+			title: "Workbench Buddy"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A486273938FB43C2"]
+			description: ["Mine some stone. Cobblestone is the turtle's first building material."]
+			id: "1D7A5D1C8692725C"
+			rewards: [{ id: "40DE15CB5EEC7D51", type: "item", item: "minecraft:coal", count: 8 }]
+			subtitle: "Dig down. Not straight down. Okay, straight down."
+			tasks: [{ id: "6833DBD44CEF396A", type: "item", item: "minecraft:cobblestone", count: 64L }]
+			title: "Stone Cold"
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1D7A5D1C8692725C"]
+			description: ["Craft a furnace and have a turtle place it.", "", "Turtles can push items into a furnace and pull results out. Automation starts here."]
+			id: "8DB9BA1E1D26388B"
+			subtitle: "A furnace the turtle can feed."
+			tasks: [{ id: "9BC191701850B27B", type: "item", item: "minecraft:furnace", count: 1L }]
+			title: "Hot Stuff"
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["8DB9BA1E1D26388B"]
+			description: ["Smelt logs into charcoal with no human hands in the furnace.", "", "Bonus points if a program keeps the furnace stocked by itself."]
+			id: "9E164BBB471432D4"
+			subtitle: "Never run on empty again."
+			tasks: [{ id: "01D75FB385A17156", type: "item", item: "minecraft:charcoal", count: 32L }]
+			title: "Fuel Line"
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["1D7A5D1C8692725C"]
+			description: ["Craft chests and have turtles build a storage wall at base.", "", "Turtles can drop items into chests and suck them back out."]
+			id: "267A7559313A0C8A"
+			rewards: [{ id: "3D7EDBB0CFB99C33", type: "xp_levels", xp_levels: 5 }]
+			subtitle: "A place to put all the stuff."
+			tasks: [{ id: "E2BBA6094CB191BC", type: "item", item: "minecraft:chest", count: 4L }]
+			title: "Home Base"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "1. Boot Sequence"
+}
