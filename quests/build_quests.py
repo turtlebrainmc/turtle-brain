@@ -205,8 +205,11 @@ def chapter_snbt(order, filename, title, icon, quests):
         lines.append("\t\t\tdescription: [%s]" % ", ".join(s(d) for d in q["desc"]))
         lines.append("\t\t\tid: %s" % s(qid(filename, q["key"])))
         rws = q.get("rewards", [])
-        if rws:
-            lines.append("\t\t\trewards: [%s]" % ", ".join(reward(filename, q["key"], i, k, **kw) for i, (k, kw) in enumerate(rws)))
+        parts = [reward(filename, q["key"], i, k, **kw) for i, (k, kw) in enumerate(rws)]
+        # hidden reward: bump the on-screen quest counter when the quest is claimed
+        parts.append('{ id: %s, type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }'
+                     % s(qid(filename, q["key"], "counter")))
+        lines.append("\t\t\trewards: [%s]" % ", ".join(parts))
         if q.get("shape"):
             lines.append("\t\t\tshape: %s" % s(q["shape"]))
         lines.append("\t\t\tsubtitle: %s" % s(q["subtitle"]))

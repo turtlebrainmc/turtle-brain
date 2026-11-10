@@ -12,6 +12,7 @@
 			dependencies: ["B5412DD95618C451"]
 			description: ["Craft a computer. Every turtle has one inside."]
 			id: "A11B999D3902171A"
+			rewards: [{ id: "ED6A9932223AA82A", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Stone, redstone, glass."
 			tasks: [{ id: "1286B9B1A75FBAE9", type: "item", item: "computercraft:computer_normal", count: 1L }]
 			title: "Brain in a Box"
@@ -22,6 +23,7 @@
 			dependencies: ["A11B999D3902171A"]
 			description: ["Build a second turtle from scratch: iron, a computer and a chest.", "", "Two turtles means jobs can run in parallel. Mining and chopping at the same time."]
 			id: "8B33516EA298EBB4"
+			rewards: [{ id: "F1D6A56F6B3126D1", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Now there are two of them."
 			tasks: [{ id: "A6F67AAB86779C06", type: "item", item: "computercraft:turtle_normal", count: 2L }]
 			title: "Shell Shock"
@@ -32,6 +34,7 @@
 			dependencies: ["8B33516EA298EBB4"]
 			description: ["Give a turtle a crafting table as an upgrade. Now it can craft its own items.", "", "Tick the box once a crafty turtle has crafted something on its own."]
 			id: "E68DA53EFF18DE86"
+			rewards: [{ id: "4CAE9F0099E32C03", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "A turtle that crafts."
 			tasks: [{ id: "83449C2DF1BF33FD", type: "checkmark" }]
 			title: "Crafty"
@@ -42,6 +45,7 @@
 			dependencies: ["A11B999D3902171A"]
 			description: ["Craft a wireless modem. Turtles with modems can report their position and progress."]
 			id: "956CBE73C53FE50B"
+			rewards: [{ id: "7A638B9B21D1C965", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Turtles that talk."
 			tasks: [{ id: "10A88EF9BF431307", type: "item", item: "computercraft:wireless_modem_normal", count: 1L }]
 			title: "Can You Hear Me?"
@@ -52,6 +56,7 @@
 			dependencies: ["956CBE73C53FE50B"]
 			description: ["Craft a disk drive and a floppy disk. New turtles can load programs from it."]
 			id: "5B0D1C3F1C96B3C0"
+			rewards: [{ id: "B447C066B7B1EC20", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Save the programs."
 			tasks: [{ id: "063C1355EE6DF0D8", type: "item", item: "computercraft:disk_drive", count: 1L }, { id: "E7753AEB5DA8F277", type: "item", item: "computercraft:disk", count: 1L }]
 			title: "Floppy"
@@ -62,6 +67,7 @@
 			dependencies: ["5B0D1C3F1C96B3C0"]
 			description: ["Build a monitor wall at base to show what every turtle is doing. Great for the camera."]
 			id: "DC5E9BF31D2F1164"
+			rewards: [{ id: "BE511FF18A08F624", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Mission control."
 			tasks: [{ id: "6604CF5064D35EB1", type: "item", item: "computercraft:monitor_normal", count: 6L }]
 			title: "Big Screen"
@@ -72,6 +78,7 @@
 			dependencies: ["E68DA53EFF18DE86"]
 			description: ["Mine gold ore and smelt it."]
 			id: "CDC0F5DA462A942D"
+			rewards: [{ id: "CEABCF417AA47214", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Advanced parts need gold."
 			tasks: [{ id: "4D27EE5139280358", type: "item", item: "minecraft:gold_ingot", count: 16L }]
 			title: "Gold Standard"
@@ -82,7 +89,7 @@
 			dependencies: ["CDC0F5DA462A942D", "DC5E9BF31D2F1164"]
 			description: ["Build an advanced turtle."]
 			id: "A877D24081A09205"
-			rewards: [{ id: "262599062716A586", type: "xp_levels", xp_levels: 10 }]
+			rewards: [{ id: "262599062716A586", type: "xp_levels", xp_levels: 10 }, { id: "397C565C80E559FB", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			shape: "gear"
 			subtitle: "A turtle with color."
 			tasks: [{ id: "E1736BBA54BD5475", type: "item", item: "computercraft:turtle_advanced", count: 1L }]

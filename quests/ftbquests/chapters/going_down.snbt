@@ -12,6 +12,7 @@
 			dependencies: ["1D7A5D1C8692725C"]
 			description: ["Find and mine coal ore. Turtles can inspect blocks to know what they're looking at."]
 			id: "2D49C06D442BCE21"
+			rewards: [{ id: "23B68EB20E2101EA", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Black gold."
 			tasks: [{ id: "67994CF23B6982A6", type: "item", item: "minecraft:coal", count: 32L }]
 			title: "Coal Seam"
@@ -22,6 +23,7 @@
 			dependencies: ["2D49C06D442BCE21"]
 			description: ["Mine iron ore. A turtle that only digs ore and skips the rest is a smart turtle."]
 			id: "08495DAD31C1D998"
+			rewards: [{ id: "ADF0066843C406A1", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "The metal that builds turtles."
 			tasks: [{ id: "0B412390BABF20CB", type: "item", item: "minecraft:raw_iron", count: 24L }]
 			title: "Iron Will"
@@ -32,7 +34,7 @@
 			dependencies: ["08495DAD31C1D998"]
 			description: ["Smelt the iron. Turtles load the furnace, turtles empty it."]
 			id: "ECAE386457F88E78"
-			rewards: [{ id: "A479207016E08F22", type: "item", item: "minecraft:coal", count: 16 }]
+			rewards: [{ id: "A479207016E08F22", type: "item", item: "minecraft:coal", count: 16 }, { id: "95F0E87A37CBD6E6", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Raw in, ingots out."
 			tasks: [{ id: "A88DDED24CE09DDA", type: "item", item: "minecraft:iron_ingot", count: 24L }]
 			title: "Smelter"
@@ -43,6 +45,7 @@
 			dependencies: ["2D49C06D442BCE21"]
 			description: ["Find sand and smelt it into glass, then craft glass panes. Computers need them."]
 			id: "2EC1C6DA3AB9DCE5"
+			rewards: [{ id: "6153535F3EEAA892", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Glass is just hot sand."
 			tasks: [{ id: "99880C02D7B12CE1", type: "item", item: "minecraft:glass_pane", count: 16L }]
 			title: "Sandy Situation"
@@ -53,6 +56,7 @@
 			dependencies: ["2EC1C6DA3AB9DCE5"]
 			description: ["Mine redstone ore. It's deep, so the turtle will need to dig deep."]
 			id: "B5412DD95618C451"
+			rewards: [{ id: "3DD366146C1847D0", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "The blood of every computer."
 			tasks: [{ id: "C2CC70845A92122C", type: "item", item: "minecraft:redstone", count: 32L }]
 			title: "Red Dust"
@@ -63,6 +67,7 @@
 			dependencies: ["B5412DD95618C451"]
 			description: ["Dig into the deepslate layer. Watch for lava. Turtles don't swim."]
 			id: "74E80B88E60EB480"
+			rewards: [{ id: "47C84A171DD99B64", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			subtitle: "Below zero."
 			tasks: [{ id: "6D8D02A69F3B69F6", type: "item", item: "minecraft:cobbled_deepslate", count: 64L }]
 			title: "Into the Dark"
@@ -73,7 +78,7 @@
 			dependencies: ["ECAE386457F88E78", "74E80B88E60EB480"]
 			description: ["Find diamonds. Every pickaxe turtle needs one, so they're worth more than they look."]
 			id: "000D0B9F0CC59E90"
-			rewards: [{ id: "BC92FD008D64C62A", type: "xp_levels", xp_levels: 10 }]
+			rewards: [{ id: "BC92FD008D64C62A", type: "xp_levels", xp_levels: 10 }, { id: "36E0DEDF25BA2489", type: "command", command: "/scoreboard players add Quests turtlebrain 1", elevate_perms: true, silent: true, exclude_from_claim_all: false }]
 			shape: "diamond"
 			subtitle: "Diamonds. Found by a robot."
 			tasks: [{ id: "2605DBC6226E104C", type: "item", item: "minecraft:diamond", count: 3L }]
