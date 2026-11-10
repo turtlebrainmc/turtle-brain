@@ -5,12 +5,13 @@
 local REPO = "https://raw.githubusercontent.com/turtlebrainmc/turtle-brain/main/terminal/"
 local CHECK_EVERY = 60 -- seconds
 
-local mon = peripheral.find("monitor")
-local chat = peripheral.find("chatBox")
-if not mon then
-  printError("No monitor attached.")
-  return
+local mon, chat
+
+local function attach()
+  mon = peripheral.find("monitor")
+  chat = peripheral.find("chatBox")
 end
+attach()
 
 local function fetch(name)
   local res = http.get(REPO .. name .. "?t=" .. os.epoch("utc"))
@@ -47,6 +48,9 @@ local function wrap(text, width)
 end
 
 local function draw(message, status)
+  if not mon then
+    return
+  end
   mon.setTextScale(1)
   mon.setBackgroundColor(colors.black)
   mon.clear()
@@ -76,14 +80,15 @@ local function draw(message, status)
   mon.write(status:sub(1, w - 2))
 end
 
-local last
-while true do
+local last, lastStatus = nil, "starting"
+
+local function check()
   local msg = fetch("message.txt")
   if msg then
     msg = msg:gsub("%s+$", "")
     if msg ~= last then
-      local time = textutils.formatTime(os.time(), false)
-      draw(msg, "Day " .. os.day() .. ", " .. time)
+      lastStatus = "Day " .. os.day() .. ", " .. textutils.formatTime(os.time(), false)
+      draw(msg, lastStatus)
       if chat and last ~= nil then
         -- first line of each new message goes to chat
         local first = msg:match("^[^\n]+") or msg
@@ -94,5 +99,20 @@ while true do
   elseif not last then
     draw("Booting up... waiting for a connection.", "offline")
   end
-  sleep(CHECK_EVERY)
+end
+
+check()
+local timer = os.startTimer(CHECK_EVERY)
+while true do
+  local event, param = os.pullEvent()
+  if event == "timer" and param == timer then
+    check()
+    timer = os.startTimer(CHECK_EVERY)
+  elseif event == "monitor_resize" or event == "peripheral" or event == "peripheral_detach" then
+    -- monitor was rebuilt or resized: re-attach and redraw
+    attach()
+    if last then
+      draw(last, lastStatus)
+    end
+  end
 end
